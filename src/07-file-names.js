@@ -16,21 +16,21 @@
 
 function addK(names, name, k) {
   if (names.indexOf(`${name}(${k})`) !== -1) {
-    return addK(names, name, k + 1)
+    return addK(names, name, k + 1);
   }
-  return `${name}(${k})`
+  return `${name}(${k})`;
 }
 
 function renameFiles(names) {
-  const result = []
+  const result = [];
   names.forEach((name) => {
     if (result.indexOf(name) === -1) {
-      result.push(name)
+      result.push(name);
     } else {
-      result.push(addK(result, name, 1))
+      result.push(addK(result, name, 1));
     }
-  })
-  return result
+  });
+  return result;
 }
 
-module.exports = renameFiles
+module.exports = renameFiles;

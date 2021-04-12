@@ -9,8 +9,8 @@
  *
  */
 function getEmailDomain(email) {
-  const result = email.match(/@[\w/\W][^@]+/g)
-  return result[result.length - 1].slice(1)
+  const result = email.match(/@[\w/\W][^@]+/g);
+  return result[result.length - 1].slice(1);
 }
 
-module.exports = getEmailDomain
+module.exports = getEmailDomain;

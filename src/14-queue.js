@@ -1,4 +1,4 @@
-const ListNode = require('../extensions/list-node')
+const ListNode = require('../extensions/list-node');
 /**
  * Implement the Queue with a given interface via linked list (use ListNode extension above).
  *
@@ -13,44 +13,44 @@ const ListNode = require('../extensions/list-node')
 
 class Queue {
   constructor() {
-    this.list = {}
+    this.list = {};
   }
 
   get size() {
-    return this.getSize(this.list)
+    return this.getSize(this.list);
   }
 
   getLastNode(list) {
     if (list.next) {
-      return this.getLastNode(list.next)
+      return this.getLastNode(list.next);
     }
-    return list
+    return list;
   }
 
   getSize(list, size = 1) {
     if (list.next) {
-      return this.getSize(list.next, size + 1)
+      return this.getSize(list.next, size + 1);
     }
-    return size
+    return size;
   }
 
   enqueue(element) {
-    const lastNode = this.getLastNode(this.list)
-    const newNode = new ListNode(element)
-    newNode.value = element
-    newNode.next = null
+    const lastNode = this.getLastNode(this.list);
+    const newNode = new ListNode(element);
+    newNode.value = element;
+    newNode.next = null;
     if (this.list.next === undefined) {
-      this.list = newNode
+      this.list = newNode;
     } else {
-      lastNode.next = newNode
+      lastNode.next = newNode;
     }
   }
 
   dequeue() {
-    const currentVal = this.list.value
-    this.list = this.list.next
-    return currentVal
+    const currentVal = this.list.value;
+    this.list = this.list.next;
+    return currentVal;
   }
 }
 
-module.exports = Queue
+module.exports = Queue;

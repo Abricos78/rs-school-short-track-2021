@@ -10,15 +10,15 @@
  * Strings have 3 common characters - 2 "a"s and 1 "c".
  */
 function getCommonCharacterCount(s1, s2) {
-  const longerArg = s1.length >= s2.length ? s1.split('').sort() : s2.split('').sort()
-  const shorterArg = s2.length <= s1.length ? s2.split('').sort() : s1.split('').sort()
+  const longerArg = s1.length >= s2.length ? s1.split('').sort() : s2.split('').sort();
+  const shorterArg = s2.length <= s1.length ? s2.split('').sort() : s1.split('').sort();
   return shorterArg.reduce((acc, el) => {
     if (longerArg.includes(el)) {
       acc++ // eslint-disable-line
-      longerArg[longerArg.indexOf(el)] = undefined
+      longerArg[longerArg.indexOf(el)] = undefined;
     }
-    return acc
-  }, 0)
+    return acc;
+  }, 0);
 }
 
-module.exports = getCommonCharacterCount
+module.exports = getCommonCharacterCount;

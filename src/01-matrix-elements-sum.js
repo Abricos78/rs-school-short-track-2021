@@ -24,9 +24,9 @@ function getMatrixElementsSum(matrix) {
           acc += item // eslint-disable-line
         }
       }
-    })
-    return acc
-  }, 0)
+    });
+    return acc;
+  }, 0);
 }
 
-module.exports = getMatrixElementsSum
+module.exports = getMatrixElementsSum;

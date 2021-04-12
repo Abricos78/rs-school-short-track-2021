@@ -10,26 +10,26 @@
  *
  */
 function deleteDigit(n) {
-  let result = 0
-  const str = `${n}`
+  let result = 0;
+  const str = `${n}`;
   for (let i = 0; i < str.length; i++) {
-    let currentN = ''
+    let currentN = '';
     switch (i) {
       case 0:
-        currentN = str.slice(1)
-        break
+        currentN = str.slice(1);
+        break;
       case n.length - 1:
-        currentN = str.slice(0, i - 1)
-        break
+        currentN = str.slice(0, i - 1);
+        break;
       default:
-        currentN = str.slice(0, i) + str.slice(i + 1)
+        currentN = str.slice(0, i) + str.slice(i + 1);
     }
 
     if (result < currentN) {
-      result = currentN
+      result = currentN;
     }
   }
-  return +result
+  return +result;
 }
 
-module.exports = deleteDigit
+module.exports = deleteDigit;

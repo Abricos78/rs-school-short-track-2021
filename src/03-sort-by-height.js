@@ -14,4 +14,4 @@ function sortByHeight(arr) {
   return arr.map(el => el > 0 ? el = sortArr.shift() : el) // eslint-disable-line
 }
 
-module.exports = sortByHeight
+module.exports = sortByHeight;

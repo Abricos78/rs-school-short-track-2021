@@ -13,13 +13,13 @@
  *
  */
 function isMAC48Address (n) {
-  const arrN = n.split('-')
+  const arrN = n.split('-');
   for (let i = 0; i < arrN.length; i++) {
     if (Number.isNaN(parseInt(arrN[i], 16))) {
-      return false
+      return false;
     }
   }
-  return true
+  return true;
 }
 
-module.exports = isMAC48Address
+module.exports = isMAC48Address;

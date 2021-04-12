@@ -12,22 +12,22 @@
  */
 class Stack {
   constructor() {
-    this.stack = []
+    this.stack = [];
   }
 
   push(element) {
-    this.stack[this.stack.length] = element
+    this.stack[this.stack.length] = element;
   }
 
   pop() {
-    const lastElement = this.stack[this.stack.length - 1]
-    this.stack = this.stack.slice(0, this.stack.length - 1)
-    return lastElement
+    const lastElement = this.stack[this.stack.length - 1];
+    this.stack = this.stack.slice(0, this.stack.length - 1);
+    return lastElement;
   }
 
   peek() {
-    return this.stack[this.stack.length - 1]
+    return this.stack[this.stack.length - 1];
   }
 }
 
-module.exports = Stack
+module.exports = Stack;

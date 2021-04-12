@@ -21,17 +21,17 @@
 function removeKFromList(l, k) {
   if (l.value === k) {
     l = l.next // eslint-disable-line
-    return removeKFromList(l, k)
+    return removeKFromList(l, k);
   }
   if (l.next && l.next.value === k) {
     l.next = l.next.next // eslint-disable-line
-    removeKFromList(l, k)
+    removeKFromList(l, k);
   }
 
   if (l.next) {
-    removeKFromList(l.next, k)
+    removeKFromList(l.next, k);
   }
-  return l
+  return l;
 }
 
-module.exports = removeKFromList
+module.exports = removeKFromList;

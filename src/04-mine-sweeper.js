@@ -26,19 +26,19 @@ function findMines(matrix) {
   for (let i = 0; i < matrix.length; i++) {
     if (Array.isArray(matrix[i])) {
       if (findMines(matrix[i])) {
-        return true
+        return true;
       }
     }
     if (matrix[i] === true) {
-      return true
+      return true;
     }
   }
-  return false
+  return false;
 }
 
 function minesweeper(matrix) {
   if (!findMines(matrix)) {
-    return matrix.map((el) => el.map(() => 0))
+    return matrix.map((el) => el.map(() => 0));
   }
 
   return matrix.map((el, indexEl) => el.map((item, indexItem) => {
@@ -60,7 +60,7 @@ function minesweeper(matrix) {
       }
     }
     return item === 0 ?  1 : item // eslint-disable-line
-  }))
+  }));
 }
 
-module.exports = minesweeper
+module.exports = minesweeper;

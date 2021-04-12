@@ -11,12 +11,12 @@
  *
  */
 function getSumOfDigits(n) {
-  const arrNum = `${n}`.split('')
-  const result = arrNum.reduce((acc, num) => acc + +num, 0)
+  const arrNum = `${n}`.split('');
+  const result = arrNum.reduce((acc, num) => acc + +num, 0);
   if (`${result}`.length > 1) {
-    return getSumOfDigits(result)
+    return getSumOfDigits(result);
   }
-  return result
+  return result;
 }
 
-module.exports = getSumOfDigits
+module.exports = getSumOfDigits;
