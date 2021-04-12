@@ -13,8 +13,24 @@
  * the output should be ["file", "file(1)", "image", "file(1)(1)", "file(2)"]
  *
  */
-function renameFiles(/* names */) {
-  throw new Error('Not implemented');
+
+function addK(names, name, k) {
+  if (names.indexOf(`${name}(${k})`) !== -1) {
+    return addK(names, name, k + 1)
+  }
+  return `${name}(${k})`
 }
 
-module.exports = renameFiles;
+function renameFiles(names) {
+  const result = []
+  names.forEach((name) => {
+    if (result.indexOf(name) === -1) {
+      result.push(name)
+    } else {
+      result.push(addK(result, name, 1))
+    }
+  })
+  return result
+}
+
+module.exports = renameFiles

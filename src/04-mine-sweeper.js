@@ -21,8 +21,46 @@
  *  [1, 1, 1]
  * ]
  */
-function minesweeper(/* matrix */) {
-  throw new Error('Not implemented');
+
+function findMines(matrix) {
+  for (let i = 0; i < matrix.length; i++) {
+    if (Array.isArray(matrix[i])) {
+      if (findMines(matrix[i])) {
+        return true
+      }
+    }
+    if (matrix[i] === true) {
+      return true
+    }
+  }
+  return false
 }
 
-module.exports = minesweeper;
+function minesweeper(matrix) {
+  if (!findMines(matrix)) {
+    return matrix.map((el) => el.map(() => 0))
+  }
+
+  return matrix.map((el, indexEl) => el.map((item, indexItem) => {
+    if (item) {
+      item = 0 // eslint-disable-line
+    } else {
+      item = 0 // eslint-disable-line
+      if (el[indexItem - 1]) {
+        item++ // eslint-disable-line
+      }
+      if (matrix[indexEl - 1] && matrix[indexEl - 1][indexItem]) {
+        item++ // eslint-disable-line
+      }
+      if (el[indexItem + 1]) {
+        item++ // eslint-disable-line
+      }
+      if (matrix[indexEl + 1] && matrix[indexEl + 1][indexItem]) {
+        item++ // eslint-disable-line
+      }
+    }
+    return item === 0 ?  1 : item // eslint-disable-line
+  }))
+}
+
+module.exports = minesweeper

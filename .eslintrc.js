@@ -20,5 +20,7 @@ module.exports = {
     'no-plusplus': 'off',
     'func-names': 'off',
     'space-before-function-paren': 'off',
+    "semi": [2, "never"],
+    "arrow-body-style": ["error", "as-needed"]
   },
 };

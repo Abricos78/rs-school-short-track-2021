@@ -16,9 +16,22 @@
  *   this.next = null;
  * }
  */
+// throw new Error('Not implemented')
 
-function removeKFromList(/* l, k */) {
-  throw new Error('Not implemented');
+function removeKFromList(l, k) {
+  if (l.value === k) {
+    l = l.next // eslint-disable-line
+    return removeKFromList(l, k)
+  }
+  if (l.next && l.next.value === k) {
+    l.next = l.next.next // eslint-disable-line
+    removeKFromList(l, k)
+  }
+
+  if (l.next) {
+    removeKFromList(l.next, k)
+  }
+  return l
 }
 
-module.exports = removeKFromList;
+module.exports = removeKFromList
